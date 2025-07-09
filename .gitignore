@@ -1,0 +1,2 @@
+#Ignore jupyter notebook checkpoint and venv environment for python
+.ipynb_checkpoints/
