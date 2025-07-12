@@ -19,11 +19,11 @@ The formulas I know right now are:
 - $S = n/2(a + l)$
 
 Where: - 
-- 'S' is the sum of the A.P
-- a~n~ is the last term of the A.P
-- 'n' is the no. of terms of an A.P
-- 'a' is the first term of an A.P
-- 'd' is the common difference an A.P
+- S is the sum of the A.P
+- $a_n$ is the last term of the A.P
+- n is the no. of terms of an A.P
+- a is the first term of an A.P
+- d is the common difference an A.P
 
 ### Method 1
 
@@ -67,22 +67,22 @@ print(sum)
 
 ### Method 3
 
-We can try solving it using the formula S = n/2(2a + (n-1)d), Where,
+We can try solving it using the formula $S = n/2(2a + (n-1)d)$, Where:
 
-- 'S' is the Sum of A.P
-- 'n' is the no. of term in A.P
-- 'a' is the first term of A.P
+- S is the sum of A.P
+- n is the number of terms in A.P
+- a is the first term of A.P
 
-To use this formula we have to know the 'n' no. of terms in A.P, to find 'n'
+To use this formula we have to know the 'n' - number of terms in A.P, to find 'n'
 
-we have to use this formula an = a + (n-1)d where,
+we have to use this formula $a_n = a + (n-1)d$ where,
 
-- 'an' is the last term of A.P
-- 'a' is the first term of A.P
-- 'n' is the no. of term in A.P
-- 'd' is the common difference of A.P
+- $a_n$ is the last term of A.P
+- a is the first term of A.P
+- n is the no. of term in A.P
+- d is the common difference of A.P
 
-Here we don't know both 'an' and 'n' so we have to find last term first to proceed
+Here we don't know both '$a_n$' and 'n' so we have to find last term first to proceed
 
 ```python
 
@@ -97,7 +97,7 @@ def sum_AP(limit,d):
             l = i
             break
     #Find No. of terms in an AP
-    n = round(((l - a)/d) + 1)
+    n = round(((l - a)/d) + 1) # This is derived standard A.P formula
 
     sum_ap = (n/2)*(2*a + (n-1)*d)
     
@@ -119,7 +119,7 @@ print(sum_3 + sum_5 - sum_15)
 
 The only difference between Method 3 and Method 4 is the different way of finding the last term.
 
-- In Method 3, I am looping of find the last term
+- In Method 3, I am looping to find the last term
 - In Method 4, I am using a formula which workes here to find the last term
 
 ```python
@@ -129,7 +129,7 @@ def sum_AP(limit, d):
 
     a = d
     l = ((limit - 1) // d) * d     # Find the last term
-    n = round(((l-a) / d) + 1)  #Find the number of terms in A.P    
+    n = round(((l-a) / d) + 1)  # Find the number of terms in A.P    
     sum_ap = (n/2)*(2*a + (n-1)*d)
     
     return sum_ap
@@ -143,3 +143,10 @@ sum_15 = sum_AP(limit, 15)
 ans = sum_3 + sum_5 - sum_15
 print(ans)
 ```
+
+#### Time and Space Complexity
+
+- Time Complexity is O(1)
+- Space Complexity is O(1)
+
+------------------------------------x--------------------
