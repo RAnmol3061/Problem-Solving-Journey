@@ -41,7 +41,8 @@ print(sum(even_sequence))
 
 ### Method 2
 
-We can write it in more consise way
+We can write it in more concise way and slightly more efficient.
+Why slightly more efficient - It avoids a second loop over the entire sequence
 
 ```python
 #Method 2
@@ -63,3 +64,64 @@ print(sum(even_sequence))
 
 - Time Complexity is O(N)
 - Space Complexity is O(N)
+
+### Method 3
+
+Main difference between Method 2 and Method 3 is that Method 3 is more space efficient because I am not storing sequence values in list.
+
+```python
+#Method 3
+a,b = 1,2
+next_fib = 0 
+even_sum = 2 # We have hardcoded 2 because it is not taken into account inside the while loop
+
+while True:
+    next_fib = a + b
+    if next_fib % 2 ==0:
+        even_sum += next_fib
+
+    if next_fib > 4000000:
+        break
+    a = b
+    b = next_fib
+
+print(even_sum)
+```
+
+#### Time and Space Complexity
+
+- Time Complexity is O(N)
+- Space Complexity is O(1). As we are only using few variables
+
+### Method 4
+
+We can solve this problem using Fibonacci property, which I also did not know before solving this question.
+
+The **Mathematical Property** is: "**If $F_n$ is a Fibonacci number, then $F_n$ is even if and only if $n$ is a multiple of 3.**"
+
+Which essentially means that every 3rd Fibonacci Number is even, so we don't have to calculate entire sequence and then find even numbers, we can directly find all the even number and sum it.
+
+The formula we are going use is **$E_k = 4*E_k-1 + E_k-2$**
+
+```python
+#Method 4
+e_k_minus_1 = 8
+e_k_minus_2 = 2
+even_sum = 10
+
+while True:
+    e_k = 4*e_k_minus_1 + e_k_minus_2
+    if e_k > 4000000:
+        break
+    even_sum += e_k
+    e_k_minus_2 = e_k_minus_1
+    e_k_minus_1 = e_k
+print(even_sum)
+```
+
+#### Time and Space Complexity
+
+- Time Complexity is O(log N). We are only counting even Fibonacci Number
+- Space Complexity is O(1)
+
+---------------------------x-------------------------
